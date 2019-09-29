@@ -1,7 +1,13 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 body {
-  background-image: url("/huge.jpg");
+  background-image: url("/huge-1k.jpg");
+  background-image: -webkit-image-set(
+    url("/huge-1k.jpg") 1x,
+    url("/huge-2k.jpg") 2x,
+    url("/huge-4k.jpg") 3x,
+    url("/huge-8k.jpg") 4x
+  );
   background-size: cover;
 }
 
