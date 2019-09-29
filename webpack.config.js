@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
+const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -16,7 +17,9 @@ module.exports = {
       chunkFilename: "[id].css",
       ignoreOrder: false
     }),
-    new BundleAnalyzerPlugin()
+    new PurgecssPlugin({
+      paths: ["./public/index.html"]
+    })
   ],
   module: {
     rules: [
